@@ -421,6 +421,8 @@ class Game():
 
     def new_game(self, saved_state=None, deck_index=0, show_selector=False):
         ''' Start a new game '''
+        if hasattr(self, 'deck'):
+            self.deck.hide()
         # If we were editing the word list, time to stop
         self.grid.stop_animation = True
         self.editing_word_list = False
